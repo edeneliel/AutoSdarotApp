@@ -51,6 +51,7 @@ public class CurrentTime extends Thread implements Runnable {
             while (running) {
                 try {
                     currentTime = Double.parseDouble(TCPRequest.sendTCPRequest("current-time"));
+                    System.out.println(currentTime);
                     duration = Double.parseDouble(TCPRequest.sendTCPRequest("duration"));
                     setCurrentTime(currentTime, duration);
                     Thread.sleep(1000);
