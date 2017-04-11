@@ -20,6 +20,14 @@
 # Gradle:
 .idea/**/gradle.xml
 .idea/**/libraries
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+app/app.iml
 
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
@@ -53,3 +61,4 @@ fabric.properties
 # *.ipr
 
 # End of https://www.gitignore.io/api/jetbrains
+build/
