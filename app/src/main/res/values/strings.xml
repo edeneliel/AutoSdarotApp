@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">AutoSdarot</string>
-    <string name="ip_adress">79.176.108.210</string>
+    <string name="ip_file">ip-file.txt</string>
 </resources>

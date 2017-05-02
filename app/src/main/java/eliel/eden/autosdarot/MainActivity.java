@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
-        TCPRequest.initResources(getResources());
+        IPHandler.initResources(this);
         videoTime = (TextView) findViewById(R.id.videoTime);
         seekBar = (SeekBar) findViewById(R.id.progressBar);
         currentTime = new CurrentTime(this);

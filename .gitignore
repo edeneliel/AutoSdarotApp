@@ -64,3 +64,8 @@ fabric.properties
 build/
 .idea/misc.xml
 .idea/vcs.xml
+.idea/modules.xml
+AutoSdarotApp.iml
+build.gradle
+app/build.gradle
+gradle/wrapper/gradle-wrapper.properties

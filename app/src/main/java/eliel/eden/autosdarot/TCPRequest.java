@@ -1,8 +1,18 @@
 package eliel.eden.autosdarot;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.res.Resources;
+import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
+import android.widget.EditText;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -14,23 +24,19 @@ import java.net.Socket;
  */
 public class TCPRequest {
     private static Socket clientSocket;
-    private static PrintWriter s_out;
-    private static BufferedReader s_in;
-    private static Resources resources;
+    private static PrintWriter stringOut;
+    private static BufferedReader stringIn;
 
-    public static void initResources(Resources res){
-        resources = res;
-    }
     public static String sendTCPRequest(String message) throws IOException {
         clientSocket = new Socket();
 
-        clientSocket.connect(new InetSocketAddress(resources.getString(R.string.ip_adress) , 1000));
+        clientSocket.connect(new InetSocketAddress(IPHandler.getIp() , 1000));
 
-        s_out = new PrintWriter( clientSocket.getOutputStream(), true);
-        s_in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-        s_out.println(message);
+        stringOut = new PrintWriter( clientSocket.getOutputStream(), true);
+        stringIn = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+        stringOut.println(message);
         String response;
-        while ((response = s_in.readLine()) != null)
+        while ((response = stringIn.readLine()) != null)
         {
             return response;
         }
